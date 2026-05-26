@@ -1,0 +1,47 @@
+{
+  "name": "angular21-erp-crm-shell",
+  "version": "0.0.0",
+  "author": "Amit Mahida",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve shell-app",
+    "build": "npm run build:libs && ng build shell-app",
+    "build:libs": "ng build shared-core && ng build shared-ui",
+    "build:gh-pages": "npm run build:libs && ng build shell-app --configuration github-pages && node tools/prepare-gh-pages.mjs",
+    "deploy:gh-pages": "npm run build:gh-pages && npx angular-cli-ghpages --dir=dist/github-pages",
+    "test": "ng test",
+    "test:ci": "ng test --watch=false"
+  },
+  "private": true,
+  "engines": {
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
+  },
+  "packageManager": "npm@10.9.2",
+  "dependencies": {
+    "@angular-architects/native-federation": "^21.2.3",
+    "@angular/animations": "^21.2.0",
+    "@angular/common": "^21.2.0",
+    "@angular/compiler": "^21.2.0",
+    "@angular/core": "^21.2.0",
+    "@angular/forms": "^21.2.0",
+    "@angular/platform-browser": "^21.2.0",
+    "@angular/router": "^21.2.0",
+    "@softarc/native-federation-node": "^3.3.4",
+    "angular-cli-ghpages": "^3.0.3",
+    "es-module-shims": "^1.5.12",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^21.2.11",
+    "@angular/build": "^21.2.11",
+    "@angular/cli": "^21.2.11",
+    "@angular/compiler-cli": "^21.2.0",
+    "jsdom": "^28.0.0",
+    "ng-packagr": "^21.2.3",
+    "prettier": "^3.8.1",
+    "typescript": "~5.9.2",
+    "vitest": "^4.0.8"
+  },
+  "description": "Host shell for the Angular 21 ERP/CRM micro-frontend demo."
+}
